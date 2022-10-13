@@ -12,7 +12,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <p>Check</p>
+      <p>This is a form</p>
     )
   }
 }
