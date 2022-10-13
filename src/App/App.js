@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Form from '../Form/Form.js';
 
 class App extends React.Component {
   constructor() {
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
       <main>
         <h1>My To Dos</h1>
+        <Form />
       </main>
     )
   }
