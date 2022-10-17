@@ -2,8 +2,8 @@ import React from 'react';
 import './Form.css';
 
 class Form extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: '',
       description: '',
@@ -14,6 +14,23 @@ class Form extends React.Component {
   handleChange = (event) => {
     const {name, value, type, checked} = event.target;
     type === "checkbox" ? this.setState({ [name]: checked }) : this.setState({ [name]: value })
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+    const todo = {
+      ...this.state
+    };
+    this.props.addToDo(todo);
+    this.clearForm();
+  }
+
+  clearForm = () => {
+    this.setState({
+      title: '',
+      description: '',
+      urgent: false
+    });
   }
 
   render() {
@@ -41,7 +58,7 @@ class Form extends React.Component {
           /> Urgent
         </label>
         <p />
-        <button>Add To Do!</button>
+        <button onClick={this.handleClick}>Add To Do!</button>
       </form>
     )
   }

@@ -28,7 +28,7 @@ class App extends React.Component {
     return (
       <main>
         <h1>My To Dos</h1>
-        <Form />
+        <Form addToDo={this.addToDo} />
         <TodosContainer />
       </main>
     )
